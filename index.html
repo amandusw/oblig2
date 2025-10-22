@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Obligatorisk oppgae 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Obligatorisk oppgave 2</h1>
+        <nav aria-label="Hovedmeny">
+            <ul>
+                <li><a href="regk.php">Registrer klasse</a></li>
+                <li><a href="visak.php">Vis alle klasser</a></li>
+                <li><a href="slettk.php">Slett klasse</a></li>
+             <h2></h2>
+            </ul>
+            <ul>
+                <li><a href="regs.php">Registrer student</a></li>
+                <li><a href="visas.php">Vis alle studenter</a></li>
+                <li><a href="sletts.php">Slett student</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p>TEst TESt TEST Test test wwdwdwdwd.</p>
+    </main>
+    <footer>
+        <p>Amandus W</p>
+    </footer>
+</body>
+</html>
