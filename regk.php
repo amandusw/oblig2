@@ -1,6 +1,6 @@
 <?php
 ?>
-<h3>Registrer klasse</h3>
+<h3>Registrer klasse!</h3>
 
 <form method="post" action="" id="registrerKlasseSkjema" name="registrerKlasseSkjema">
   Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
@@ -12,13 +12,13 @@
 
 <?php 
 mysqli_report(MYSQLI_REPORT_OFF);
-  if (isset($_POST ["registrerPoststedKnapp"]))
+  if (isset($_POST ["registrerKlasseKnapp"]))
     {
       $klassekode=$_POST ["klassekode"];
       $klassenavn=$_POST ["klassenavn"];
       $studiumkode=$_POST ["studiumkode"]; 
 
-      if (!$klassekode || !$klassenavn  || $studiumkode)
+      if (!$klassekode || !$klassenavn || $studiumkode)
         {
           print ("B&aring;de postnr og poststed m&aring; fylles ut");
         }
