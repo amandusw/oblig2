@@ -28,7 +28,6 @@
           print ("<option value='$klassekode'> $klassekode </option>");
         }
     ?>
-  <input type="text" id="klassekode" name="klassekode" required /> <br/>
   <input type="submit" value="Slett klasse" name="slettKlasseKnapp" id="slettKlasseKnapp" /> 
 </form>
 
