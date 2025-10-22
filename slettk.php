@@ -28,13 +28,17 @@
           print ("<option value='$klassekode'> $klassekode </option>");
         }
     ?>
+    </select> <br><br/>
+
   <input type="submit" value="Slett klasse" name="slettKlasseKnapp" id="slettKlasseKnapp" /> 
 </form>
 
 <?php
-  if (isset($_POST ["slettPoststedKnapp"]))
+mysqli_report(MYSQLI_REPORT_OFF);
+
+  if (isset($_POST ["slettKlasseKnapp"]))
     {	
-      $klassekode=$_POST ["postnr"];
+      $klassekode=$_POST ["klassekode"];
 	  
 	  if (!$klassekode)
         {
@@ -42,7 +46,7 @@
         }
       else
         {
-          include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
+          include("db.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
 
           $sqlSetning="SELECT * FROM klasse WHERE klasse='$klassekode';";
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
