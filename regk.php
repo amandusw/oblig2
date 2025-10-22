@@ -22,7 +22,7 @@ mysqli_report(MYSQLI_REPORT_OFF);
 
       if (!$klassekode ||!$klassenavn || !$studiumkode)
         {
-          print ("B&aring;de postnr og poststed m&aring; fylles ut");
+          print ("Alle felt m&aring; fylles ut");
         }
       else
         {
