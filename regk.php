@@ -1,5 +1,7 @@
 <?php
+
 ?>
+
 <h3>Registrer klasse!</h3>
 
 <form method="post" action="" id="registrerKlasseSkjema" name="registrerKlasseSkjema">
@@ -18,7 +20,7 @@ mysqli_report(MYSQLI_REPORT_OFF);
       $klassenavn=$_POST ["klassenavn"];
       $studiumkode=$_POST ["studiumkode"]; 
 
-      if (!$klassekode || !$klassenavn || $studiumkode)
+      if (!$klassekode ||!$klassenavn || !$studiumkode)
         {
           print ("B&aring;de postnr og poststed m&aring; fylles ut");
         }
