@@ -58,7 +58,7 @@ mysqli_report(MYSQLI_REPORT_OFF);
             }
           else
             {	  
-              $sqlSetning="DELETE FROM poststed WHERE postnr='$klassekode';";
+              $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
                 /* SQL-setning sendt til database-serveren */
 		
