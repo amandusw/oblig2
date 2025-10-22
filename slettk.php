@@ -60,7 +60,7 @@ mysqli_report(MYSQLI_REPORT_OFF);
             {	  
               $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
-                /* SQL-setning sendt til database-serveren */
+                /* SQL-setning sendtttt til database-serveren */
 		
               print ("F&oslash;lgende poststed er n&aring; slettet: $klassekode  <br />");
             }

@@ -26,7 +26,7 @@ mysqli_report(MYSQLI_REPORT_OFF);
         }
       else
         {
-          include("db.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
+          include("db.php");  /* tilkoblingggg til database-serveren utført og valg av database foretatt */
 
           $sqlSetning="SELECT * FROM klasse WHERE klassekode='$klassekode';";
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
