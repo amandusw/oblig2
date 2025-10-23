@@ -38,8 +38,9 @@ mysqli_report(MYSQLI_REPORT_OFF);
       $brukernavn=$_POST ["brukernavn"];
       $fornavn=$_POST ["fornavn"];
       $etternavn=$_POST ["etternavn"]; 
+      $klassekode=$_POST ["klassekode"];
 
-      if (!$brukernavn ||!$fornavn || !$etternavn)
+      if (!$brukernavn ||!$fornavn || !$etternavn || !$klassekode)
         {
           print ("Alle felt m&aring; fylles ut");
         }
@@ -57,11 +58,11 @@ mysqli_report(MYSQLI_REPORT_OFF);
             }
           else
             {
-              $sqlSetning="INSERT INTO student VALUES('$brukernavn','$fornavn','$etternavn');";
+              $sqlSetning="INSERT INTO student VALUES('$brukernavn','$fornavn','$etternavn','$klassekode');";
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
                 /* SQL-setning sendt til database-serveren */
 
-              print ("F&oslash;lgende student er n&aring; registrert: $brukernavn $fornavn $etternavn"); 
+              print ("F&oslash;lgende student er n&aring; registrert: $brukernavn $fornavn $etternavn $klassekode"); 
             }
         }
     }
