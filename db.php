@@ -1,5 +1,6 @@
-<?php  /* db-tilkobling */
-/*  Programmet foretar tilkobling til database-server og valg av database
+<?php  
+/* db-tilkobling */
+/*  Tilkobling til database-server og valg av database
 */
 $host = getenv('DB_HOST');
 $username = getenv('DB_USER');
