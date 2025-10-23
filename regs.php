@@ -8,6 +8,25 @@
   Brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
   Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
   Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
+  Klassekode
+  <select name="klassekode" id="klassekode" required>
+    <option value="">Velg klassekode</option>
+
+    <?php
+      include("db.php");  // kobler til database
+
+      $sqlSetning = "SELECT * FROM klasse ORDER BY klassekode;";
+      $sqlResultat = mysqli_query($db, $sqlSetning) or die("Ikke mulig å hente data fra databasen");
+      $antallRader = mysqli_num_rows($sqlResultat);
+
+      for ($r = 1; $r <= $antallRader; $r++) {
+        $rad = mysqli_fetch_array($sqlResultat);
+        $klassekode = $rad["klassekode"];
+        print("<option value='$klassekode'>$klassekode</option>");
+      }
+    ?>
+
+
   <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
