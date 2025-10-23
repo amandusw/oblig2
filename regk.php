@@ -2,7 +2,7 @@
 
 ?>
 
-<h3>Registrer klasse!</h3>
+<h3>Registrer klasse</h3>
 
 <form method="post" action="" id="registrerKlasseSkjema" name="registrerKlasseSkjema">
   Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
@@ -32,9 +32,9 @@ mysqli_report(MYSQLI_REPORT_OFF);
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           $antallRader=mysqli_num_rows($sqlResultat); 
 
-          if ($antallRader!=0)  /* poststedet er registrert fra før */
+          if ($antallRader!=0)  /* klassen er registrert fra før */
             {
-              print ("Poststedet er registrert fra f&oslashr");
+              print ("Klassen er registrert fra f&oslashr");
             }
           else
             {
@@ -42,7 +42,7 @@ mysqli_report(MYSQLI_REPORT_OFF);
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
                 /* SQL-setning sendt til database-serveren */
 
-              print ("F&oslash;lgende poststed er n&aring; registrert: $klassekode $klassenavn $studiumkode"); 
+              print ("F&oslash;lgende klasse er n&aring; registrert: $klassekode $klassenavn $studiumkode"); 
             }
         }
     }
