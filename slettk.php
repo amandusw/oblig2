@@ -51,7 +51,8 @@ if (isset($_POST["slettKlasseKnapp"])) {
       if ($ok) {
         print("Følgende klasse er nå slettet: <b>$klassekode</b><br>");
       } else {
-        print("Feil ved sletting: " . mysqli_error($db));
+        print("Feil ved sletting fordi det finnes studenter som er registrert i denne klassen.</p>");
+
       }
     }
   }
