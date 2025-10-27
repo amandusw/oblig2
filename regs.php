@@ -1,6 +1,3 @@
-<?php
-
-?>
 
 <h3>Registrer student</h3>
 
@@ -13,7 +10,7 @@
     <option value="">Velg klassekode</option>
 
     <?php
-      include("db.php");  // kobler til database
+      include("db.php");  
 
       $sqlSetning = "SELECT * FROM klasse ORDER BY klassekode;";
       $sqlResultat = mysqli_query($db, $sqlSetning) or die("Ikke mulig å hente data fra databasen");
@@ -31,7 +28,8 @@
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
 
-<?php 
+<?php
+
 mysqli_report(MYSQLI_REPORT_OFF);
   if (isset($_POST ["registrerStudentKnapp"]))
     {
@@ -46,13 +44,13 @@ mysqli_report(MYSQLI_REPORT_OFF);
         }
       else
         {
-          include("db.php");  /* tilkoblingggg til database-serveren utført og valg av database foretatt */
+          include("db.php");  
 
           $sqlSetning="SELECT * FROM student WHERE brukernavn='$brukernavn';";
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           $antallRader=mysqli_num_rows($sqlResultat); 
 
-          if ($antallRader!=0)  /* studenten er registrert fra før */
+          if ($antallRader!=0)  
             {
               print ("Studenten er registrert fra f&oslashr");
             }
@@ -60,7 +58,6 @@ mysqli_report(MYSQLI_REPORT_OFF);
             {
               $sqlSetning="INSERT INTO student VALUES('$brukernavn','$fornavn','$etternavn','$klassekode');";
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
-                /* SQL-setning sendt til database-serveren */
 
               print ("F&oslash;lgende student er n&aring; registrert: $brukernavn $fornavn $etternavn $klassekode"); 
             }

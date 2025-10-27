@@ -1,8 +1,3 @@
-<?php  
-/* slett-klasser
-   Programmet lar brukeren velge en klassekode og slette den fra databasen
-*/
-?>
 
 <script src="funksjoner.js"></script>
 
@@ -14,7 +9,7 @@
     <option value="">Velg klassekode</option>
 
     <?php
-      include("db.php");  // kobler til database
+      include("db.php");  
 
       $sqlSetning = "SELECT * FROM klasse;";
       $sqlResultat = mysqli_query($db, $sqlSetning) or die("Ikke mulig å hente data fra databasen");
@@ -43,7 +38,6 @@ if (isset($_POST["slettKlasseKnapp"])) {
   } else {
     include("db.php");
 
-    // Sjekk om klassen finnes
     $sqlSetning = "SELECT * FROM klasse WHERE klassekode='$klassekode';";
     $sqlResultat = mysqli_query($db, $sqlSetning) or die("Ikke mulig å hente data fra databasen");
     $antallRader = mysqli_num_rows($sqlResultat);
@@ -51,7 +45,6 @@ if (isset($_POST["slettKlasseKnapp"])) {
     if ($antallRader == 0) {
       print("Klassen finnes ikke i databasen.");
     } else {
-      // Slett klassen
       $sqlSetning = "DELETE FROM klasse WHERE klassekode='$klassekode';";
       $ok = mysqli_query($db, $sqlSetning);
 

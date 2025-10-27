@@ -1,8 +1,3 @@
-<?php  
-/* slett-student
-   Programmet lar brukeren velge en student (brukernavn) og slette den fra databasen
-*/
-?>
 
 <script src="funksjoner.js"></script>
 
@@ -14,7 +9,7 @@
     <option value="">Velg student</option>
 
     <?php
-      include("db.php");  // kobler til database
+      include("db.php"); 
 
       $sqlSetning = "SELECT * FROM student ORDER BY brukernavn;";
       $sqlResultat = mysqli_query($db, $sqlSetning) or die("Ikke mulig å hente data fra databasen");
@@ -47,7 +42,6 @@ if (isset($_POST["slettStudentKnapp"])) {
   } else {
     include("db.php");
 
-    // Sjekk om studenten finnes
     $sqlSetning = "SELECT * FROM student WHERE brukernavn='$brukernavn';";
     $sqlResultat = mysqli_query($db, $sqlSetning) or die("Ikke mulig å hente data fra databasen");
     $antallRader = mysqli_num_rows($sqlResultat);
@@ -55,7 +49,6 @@ if (isset($_POST["slettStudentKnapp"])) {
     if ($antallRader == 0) {
       print("Studenten finnes ikke i databasen.");
     } else {
-      // Slett studenten
       $sqlSetning = "DELETE FROM student WHERE brukernavn='$brukernavn';";
       $ok = mysqli_query($db, $sqlSetning);
 
